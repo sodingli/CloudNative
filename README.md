@@ -6,7 +6,7 @@
 
 
 
-## [生成并建立证书](/GenerateCA/README.MD)。
+## [生成并建立证书](/GenerateCA/README.MD)
 ## [部署ETCD集群](/etcd/README.MD)
 ## [安装Kubectl ](/Kubernetes/Kubectl/README.MD)
 ## [安装MASTER ](/Kubernetes/Master/README.MD)
