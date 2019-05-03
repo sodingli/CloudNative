@@ -1,0 +1,23 @@
+###
+# kubernetes system config
+#
+# The following values are used to configure various aspects of all
+# kubernetes services, including
+#
+#   kube-apiserver.service
+#   kube-controller-manager.service
+#   kube-scheduler.service
+#   kubelet.service
+#   kube-proxy.service
+# logging to stderr means we get it in the systemd journal
+KUBE_LOGTOSTDERR="--logtostderr=true"
+
+# journal message level, 0 is debug
+KUBE_LOG_LEVEL="--v=0"
+
+# Should this cluster be allowed to run privileged docker containers
+KUBE_ALLOW_PRIV="--allow-privileged=true"
+
+# How the controller-manager, scheduler, and proxy find the apiserver
+KUBE_MASTER="--master=http://172.16.97.244:8080"
+KUBELET_ARGS="--address=172.16.97.244  --fail-swap-on --anonymous-auth=false --authentication-token-webhook --authorization-mode=Webhook --client-ca-file=/etc/kubernetes/ssl/ca.pem   --fail-swap-on=false  --hostname-override=newhost --kubeconfig=/etc/kubernetes/kubelet.kubeconfig  --pod-infra-container-image=mirrorgooglecontainers/pause-amd64:3.1 --register-node=true --root-dir=/var/lib/kubelet --tls-cert-file=/etc/kubernetes/ssl/kubelet.pem --tls-private-key-file=/etc/kubernetes/ssl/kubelet-key.pem --cgroups-per-qos=true --runtime-cgroups=/systemd/system.slice "
